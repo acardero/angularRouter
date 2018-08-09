@@ -7,7 +7,6 @@ import { CounterService } from '../../services/counter.service';
   templateUrl: './my-counter.component.html',
   styleUrls: ['./my-counter.component.css'],
   providers: [CounterService]
-
 })
 export class MyCounterComponent implements OnInit {
 
