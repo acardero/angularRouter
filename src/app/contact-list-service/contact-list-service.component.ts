@@ -6,7 +6,7 @@ import { ContactServiceService } from '../contact-service.service';
 
 @Component({
   selector: 'app-contact-list-service',
-  templateUrl: '../contact-list/contact-list.component.html',
+  templateUrl: 'contact-list-service.component.html',
   styleUrls: ['../contact-list/contact-list.component.css']
 })
 export class ContactListServiceComponent implements OnInit {
@@ -18,8 +18,12 @@ export class ContactListServiceComponent implements OnInit {
     this.contacts = this.contactService.getList();
   }
 
-  viewDetails(id) {
-    this.router.navigate(['contact', id]);
+  // viewDetails(id) {
+  //   this.router.navigate(['contact', id]);
+  // }
+  viewDetails(id, param){
+    this.router.navigate(['contact', id], { queryParams: { foo: param }});
   }
+
 
 }

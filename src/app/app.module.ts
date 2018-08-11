@@ -14,15 +14,31 @@ import { ContactComponent } from './contact/contact.component';
 import { MyCounterComponent } from './services/my-counter/my-counter.component';
 import { MySecondCounterComponent } from './my-second-counter/my-second-counter.component';
 import { ContactListServiceComponent } from './contact-list-service/contact-list-service.component';
+import { ContactOverviewComponent } from './contact-overview/contact-overview.component';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
 
 const routes: Routes = [
   { path: '', component: ContactListComponent },
   { path: 'listService', component: ContactListServiceComponent },
   { path: 'home',  component: MyHomeComponent },
   { path: 'about', component: MyAboutComponent },
-  { path: 'contact/:id', component: ContactComponent }
-
+  { path: 'contact/:id', component: ContactComponent, 
+      children: [
+        { path: '', component: ContactOverviewComponent },
+        { path: 'edit', component: ContactEditComponent }
+      ]
+  }
 ];
+
+// const routes: Routes = [
+//   { path: '', component: ContactListComponent },
+//   { path: 'contact/:id', component: ContactComponent,
+//     children: [
+//       { path: '', component: ContactOverviewComponent },
+//       { path: 'edit', component: ContactEditComponent }
+//     ]
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -33,7 +49,9 @@ const routes: Routes = [
     ContactComponent,
     MyCounterComponent,
     MySecondCounterComponent,
-    ContactListServiceComponent
+    ContactListServiceComponent,
+    ContactOverviewComponent,
+    ContactEditComponent
   ],
   imports: [
     BrowserModule,
