@@ -16,6 +16,7 @@ import { MySecondCounterComponent } from './my-second-counter/my-second-counter.
 import { ContactListServiceComponent } from './contact-list-service/contact-list-service.component';
 import { ContactOverviewComponent } from './contact-overview/contact-overview.component';
 import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { ContactListItemComponent } from './contact-list-item/contact-list-item.component';
 
 const routes: Routes = [
   { path: '', component: ContactListComponent },
@@ -51,7 +52,8 @@ const routes: Routes = [
     MySecondCounterComponent,
     ContactListServiceComponent,
     ContactOverviewComponent,
-    ContactEditComponent
+    ContactEditComponent,
+    ContactListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@
     <th colspan="2"> Details </th>
   </tr>
   <tr *ngFor="let contact of contacts">
+    <app-contact-list-item [contact]="contact"></app-contact-list-item>
     <td> {{ contact.id }} </td>
     <td> {{ contact.name }} </td>
     <td>
@@ -13,5 +14,6 @@
     <td>
       <a [routerLink]="['contact',contact.id]"> details (link) </a>
     </td>
+
   </tr>
 </table>

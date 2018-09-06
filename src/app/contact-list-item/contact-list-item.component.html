@@ -1,0 +1,8 @@
+<td> {{ contact.id }} </td>
+<td> {{ contact.name }} </td>
+<td>
+  <button (click)="viewDetails(contact.id)"> details (btn)  </button>
+</td>
+<td>
+  <a [routerLink]="['contact',contact.id]"> details (link) </a>
+</td>
